@@ -1,0 +1,55 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<Company>锐冰</Company>
+		<Authors>锐冰</Authors>
+		<Version>1.0.0</Version>
+		<Title>AtomWallpaper</Title>
+		<AssemblyName>AtomWallpaper</AssemblyName>
+		<NeutralLanguage>zh-Hans</NeutralLanguage>
+		<Description>AtomWallpaper——将网页作为壁纸</Description>
+		<Copyright>By SharpIce 锐冰@2024 Mozilla Public License Version 2.0</Copyright>
+
+		<!-- 存储库信息 -->
+		<RepositoryType>git</RepositoryType>
+		<RepositoryUrl>https://github.com/FurryRbl/AtomWallpaper</RepositoryUrl>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<UseWPF>True</UseWPF>
+		<Platforms>x64</Platforms>
+		<Nullable>enable</Nullable>
+		<OutputType>Exe</OutputType>
+		<!-- <OutputType>WinExe</OutputType> -->
+		<UseWindowsForms>True</UseWindowsForms>
+		<!-- 启用全局命名空间 -->
+		<ImplicitUsings>enable</ImplicitUsings>
+		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
+		<StartupObject>AtomWallpaper.Program</StartupObject>
+		<InvariantGlobalization>true</InvariantGlobalization>
+		<ProduceReferenceAssembly>False</ProduceReferenceAssembly>
+		<TargetFramework>net8.0-windows10.0.26100.0</TargetFramework>
+		<ApplicationIcon>Properties\manifest\logo.ico</ApplicationIcon>
+		<ApplicationManifest>Properties\manifest\app.manifest</ApplicationManifest>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+		<!-- 不包含框架 -->
+		<SelfContained>false</SelfContained>
+		<PublishTrimmed>true</PublishTrimmed>
+		<PublishReadyToRun>true</PublishReadyToRun>
+		<!-- 不发布为单个文件 -->
+		<PublishSingleFile>false</PublishSingleFile>
+		<OptimizationPreference>Speed</OptimizationPreference>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Remove=".gitignore" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="CefSharp.Wpf.NETCore" Version="129.0.110" />
+	</ItemGroup>
+
+</Project>

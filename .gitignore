@@ -1,0 +1,10 @@
+# MacOS
+.DS_Store
+
+# Visual Studio
+/.vs
+*.user
+
+# IntelliJ IDEA
+/.idea
+
